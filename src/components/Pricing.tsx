@@ -182,7 +182,7 @@ export default function Pricing() {
                 </div>
                 <p className="pricing__best">Best for: {t.best}</p>
               </div>
-              <ul className="pricing__bullets" role="list">
+              <ul className="pricing__bullets">
                 {t.bullets.map((b, j) => (
                   <li key={j} className="pricing__bullet">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

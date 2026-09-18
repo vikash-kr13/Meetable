@@ -47,7 +47,7 @@ export default function Nav({ onCTAClick }: Props) {
         </a>
 
         {/* Links */}
-        <ul className="nav__links" role="list">
+        <ul className="nav__links">
           <li><a href="#how-it-works" className="nav__link">How it works</a></li>
           <li><a href="#pricing" className="nav__link">Pricing</a></li>
           <li><a href="#faq" className="nav__link">FAQ</a></li>
