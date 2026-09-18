@@ -1,0 +1,235 @@
+/* ============================================================
+   GROUPROLL — Design System Tokens + Global Styles
+   All hex values live here as CSS variables.
+   Components use ONLY var() references — no hardcoded hex.
+   ============================================================ */
+
+/* ---------- Color tokens ---------- */
+:root {
+  --color-bg: #FBF8F2;
+  --color-surface: #FFFFFF;
+  --color-border: #E3DCCD;
+  --color-text-primary: #26221A;
+  --color-text-muted: #6E6657;
+  --color-accent: #1E6B4C;
+  --color-accent-hover: #16543B;
+  --color-text-on-accent: #FFFFFF;
+  --color-kraft: #A67C52;
+  --color-accent-light: #EAF3EE;
+  --color-error: #b91c1c;
+
+  /* ---------- Type scale ---------- */
+  --font-heading: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+
+  --text-h1: 44px;
+  --text-h2: 32px;
+  --text-h3: 20px;
+  --text-body: 17px;
+  --text-small: 14px;
+
+  /* ---------- Spacing scale (4-base) ---------- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 16px;
+  --sp-4: 24px;
+  --sp-5: 32px;
+  --sp-6: 48px;
+  --sp-7: 64px;
+  --sp-8: 96px;
+
+  /* ---------- Layout ---------- */
+  --max-width: 1080px;
+  --section-pad-v: 96px;
+  --radius: 10px;
+  --shadow-card: 0 1px 3px rgba(38, 34, 26, 0.08);
+  --shadow-hero: 0 4px 24px rgba(38, 34, 26, 0.12);
+}
+
+/* ---------- Reset & base ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-wrap: pretty;
+}
+
+h1, h2, h4 {
+  font-family: var(--font-heading);
+  text-wrap: balance;
+}
+
+h3 {
+  /* h3 intentionally uses body font per design spec — not in the heading-font group */
+  font-family: var(--font-body);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--text-h1);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: var(--text-h2);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: var(--text-h3);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+p, li {
+  max-width: 60ch;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ---------- Utility ---------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--sp-4);
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent);
+  color: var(--color-text-on-accent);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: 500;
+  padding: 14px 28px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 200ms ease-out, transform 150ms ease-out;
+  white-space: nowrap;
+}
+
+@media (hover: hover) {
+  .btn-primary:hover {
+    background: var(--color-accent-hover);
+  }
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--color-accent);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: 500;
+  padding: 14px 28px;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-accent);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 200ms ease-out, transform 150ms ease-out;
+  white-space: nowrap;
+}
+
+@media (hover: hover) {
+  .btn-secondary:hover {
+    background: var(--color-accent-light);
+  }
+}
+
+.btn-secondary:active {
+  transform: scale(0.97);
+}
+
+.btn-secondary:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+/* ---------- Section rhythm ---------- */
+.section-bg {
+  background: var(--color-bg);
+  padding: var(--section-pad-v) 0;
+}
+
+.section-surface {
+  background: var(--color-surface);
+  padding: var(--section-pad-v) 0;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+  :root {
+    --section-pad-v: 64px;
+    --text-h1: 32px;
+    --text-h2: 26px;
+    /* Enforce 16px minimum body text on mobile */
+    --text-body: 16px;
+    --text-small: 16px;
+  }
+
+  p, li {
+    max-width: 100%;
+  }
+}

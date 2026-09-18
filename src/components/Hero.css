@@ -1,0 +1,112 @@
+.hero {
+  padding-top: var(--sp-8);
+  padding-bottom: var(--sp-8);
+}
+
+.hero__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-8);
+  align-items: center;
+}
+
+.hero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.hero__headline {
+  color: var(--color-text-primary);
+}
+
+.hero__sub {
+  font-size: var(--text-body);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 52ch;
+}
+
+.hero__capture {
+  margin-top: var(--sp-2);
+}
+
+.hero__credibility {
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+  max-width: 52ch;
+}
+
+.hero__stat {
+  color: var(--color-accent);
+  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: var(--text-small);
+}
+
+.hero__image-wrap {
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-hero);
+}
+
+.hero__svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Entrance animation */
+.hero__copy > * {
+  opacity: 0;
+  transform: scale(0.95) translateY(12px);
+  animation: entranceUp 400ms ease-out forwards;
+}
+
+.hero__copy > *:nth-child(1) { animation-delay: 0ms; }
+.hero__copy > *:nth-child(2) { animation-delay: 60ms; }
+.hero__copy > *:nth-child(3) { animation-delay: 120ms; }
+.hero__copy > *:nth-child(4) { animation-delay: 180ms; }
+
+.hero__image-wrap {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: entranceUp 500ms ease-out 80ms forwards;
+}
+
+@keyframes entranceUp {
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__copy > *,
+  .hero__image-wrap {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero__container {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+  }
+
+  .hero__image-wrap {
+    order: -1;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: var(--sp-6);
+    padding-bottom: var(--sp-6);
+  }
+}

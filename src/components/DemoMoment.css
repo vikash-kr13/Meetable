@@ -1,0 +1,178 @@
+.demo__intro {
+  font-size: var(--text-body);
+  color: var(--color-text-muted);
+  margin-bottom: var(--sp-5);
+  max-width: 60ch;
+}
+
+/* Two-panel side-by-side layout */
+.demo__panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+  align-items: start;
+  margin-bottom: var(--sp-6);
+}
+
+/* Individual panel wrapper */
+.demo__panel {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  background: var(--color-surface);
+  opacity: 0;
+  transform: scale(0.95) translateY(10px);
+  transition: opacity 400ms ease-out, transform 400ms ease-out;
+}
+
+.demo__panel--output {
+  transition-delay: 80ms;
+}
+
+.is-visible .demo__panel {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.demo__panel-label {
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--sp-2) var(--sp-3);
+  font-size: var(--text-small);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Panel 1: monospace input */
+.demo__paste {
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--color-text-primary);
+  padding: var(--sp-4);
+  white-space: pre;
+  overflow-x: auto;
+  background: var(--color-surface);
+  margin: 0;
+}
+
+/* Panel 2: output cards */
+.demo__output {
+  padding: var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.demo__table-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.demo__table-header {
+  background: var(--color-accent);
+  color: var(--color-text-on-accent);
+  padding: var(--sp-2) var(--sp-3);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.demo__table-num {
+  font-weight: 600;
+  font-size: var(--text-small);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.demo__table-game {
+  font-weight: 600;
+  font-size: var(--text-small);
+  flex: 1;
+}
+
+.demo__table-time {
+  font-size: var(--text-small);
+  opacity: 0.85;
+  white-space: nowrap;
+}
+
+.demo__table-players {
+  padding: var(--sp-2) var(--sp-3) 0;
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  max-width: 100%;
+}
+
+.demo__table-why {
+  padding: var(--sp-1) var(--sp-3) var(--sp-2);
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+  max-width: 100%;
+}
+
+.demo__why-label {
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+/* Waitlist card */
+.demo__waitlist-card {
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.demo__waitlist-header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-3);
+  font-size: var(--text-small);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+  border-bottom: 1px dashed var(--color-border);
+  background: var(--color-bg);
+}
+
+.demo__waitlist-body {
+  padding: var(--sp-2) var(--sp-3);
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+  max-width: 100%;
+}
+
+/* Capture block below demo */
+.demo__capture {
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--color-border);
+}
+
+.demo__capture-label {
+  font-size: var(--text-body);
+  color: var(--color-text-primary);
+  font-weight: 500;
+  max-width: 100%;
+}
+
+/* Mobile: stack panels */
+@media (max-width: 820px) {
+  .demo__panels {
+    grid-template-columns: 1fr;
+  }
+
+  .demo__paste {
+    font-size: 11px;
+  }
+}

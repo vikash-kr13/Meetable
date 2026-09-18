@@ -1,0 +1,30 @@
+.finalcta__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-4);
+  opacity: 0;
+  transform: scale(0.95) translateY(10px);
+  transition: opacity 400ms ease-out, transform 400ms ease-out;
+}
+
+.is-visible .finalcta__inner {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.finalcta__headline {
+  max-width: 22ch;
+}
+
+.finalcta__risk {
+  font-size: var(--text-body);
+  color: var(--color-text-muted);
+  max-width: 46ch;
+}
+
+.finalcta__capture {
+  width: 100%;
+  max-width: 520px;
+}

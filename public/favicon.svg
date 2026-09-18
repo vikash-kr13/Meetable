@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Table surface -->
+  <circle cx="24" cy="24" r="18" fill="#1E6B4C" stroke="#16543B" stroke-width="1.5"/>
+  <!-- Table edge highlight -->
+  <circle cx="24" cy="24" r="15" fill="none" stroke="#A67C52" stroke-width="0.75" opacity="0.6"/>
+
+  <!-- Meeple top (12 o'clock) -->
+  <g transform="translate(24, 8)">
+    <circle cx="0" cy="-1" r="2" fill="#FBF8F2"/>
+    <path d="M-2.5 1.5 Q-3 4 -1.5 5 L0 4 L1.5 5 Q3 4 2.5 1.5 Q1 0 0 1 Q-1 0 -2.5 1.5Z" fill="#FBF8F2"/>
+  </g>
+
+  <!-- Meeple right (3 o'clock) -->
+  <g transform="translate(38, 24)">
+    <circle cx="0" cy="-1" r="2" fill="#A67C52"/>
+    <path d="M-2.5 1.5 Q-3 4 -1.5 5 L0 4 L1.5 5 Q3 4 2.5 1.5 Q1 0 0 1 Q-1 0 -2.5 1.5Z" fill="#A67C52"/>
+  </g>
+
+  <!-- Meeple bottom (6 o'clock) -->
+  <g transform="translate(24, 38)">
+    <circle cx="0" cy="-1" r="2" fill="#FBF8F2"/>
+    <path d="M-2.5 1.5 Q-3 4 -1.5 5 L0 4 L1.5 5 Q3 4 2.5 1.5 Q1 0 0 1 Q-1 0 -2.5 1.5Z" fill="#FBF8F2"/>
+  </g>
+
+  <!-- Meeple left (9 o'clock) -->
+  <g transform="translate(10, 24)">
+    <circle cx="0" cy="-1" r="2" fill="#A67C52"/>
+    <path d="M-2.5 1.5 Q-3 4 -1.5 5 L0 4 L1.5 5 Q3 4 2.5 1.5 Q1 0 0 1 Q-1 0 -2.5 1.5Z" fill="#A67C52"/>
+  </g>
+</svg>

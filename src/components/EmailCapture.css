@@ -1,0 +1,100 @@
+.ec-honeypot {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+}
+
+.ec-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  width: 100%;
+}
+
+.ec-row {
+  display: flex;
+  gap: var(--sp-2);
+  width: 100%;
+}
+
+.ec-input {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  padding: 14px var(--sp-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  outline: none;
+  transition: border-color 150ms ease-out;
+}
+
+.ec-input:focus,
+.ec-input:focus-visible {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(30, 107, 76, 0.12);
+}
+
+.ec-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.ec-input:disabled {
+  opacity: 0.6;
+}
+
+.ec-error {
+  font-size: var(--text-small);
+  color: var(--color-error);
+  margin: 0;
+}
+
+.ec-privacy {
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+  margin: 0;
+  max-width: 100%;
+}
+
+.ec-success {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  background: var(--color-accent-light);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius);
+  padding: var(--sp-4);
+  color: var(--color-text-primary);
+}
+
+.ec-success svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.ec-success p {
+  font-size: var(--text-body);
+  line-height: 1.6;
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  .ec-row {
+    flex-direction: column;
+  }
+
+  .ec-btn {
+    width: 100%;
+    min-height: 48px; /* thumb-size tap target */
+  }
+
+  .ec-input {
+    min-height: 48px;
+    font-size: 16px; /* prevent iOS zoom on focus */
+  }
+}

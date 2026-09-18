@@ -1,0 +1,23 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // leads collection:
+    // - Anyone can CREATE a document (anonymous public form submission)
+    // - Nobody can READ, UPDATE, or DELETE from the public site
+    // - Basic validation: email field must be a non-empty string
+    match /leads/{leadId} {
+      allow create: if request.resource.data.email is string
+                    && request.resource.data.email.size() > 0
+                    && request.resource.data.email.size() < 320
+                    && request.resource.data.source is string;
+
+      allow read, update, delete: if false;
+    }
+
+    // Deny everything else
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
